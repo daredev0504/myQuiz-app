@@ -38,7 +38,7 @@ nav a{
     padding: 1em;
 }
 .fa-orcid{
-    color:rgb(43, 42, 42);
+    color:#4dc84d;
     font-size: 1.5em;
 }
 nav a:hover{
@@ -81,15 +81,26 @@ nav a:hover{
 /*main styles*/
 main{
     background:#4dc84d;
+    height:100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items:center;
+    justify-content: center;
 }
-
-h1{
+div>button{
+    font-size:2em;
+    padding:.4em 1em;
+    color: #4dc84d;
+    border: none;
+    transition:transform 200ms;
+}
+div>button:hover{
+    background: none;
+    border: 1px solid white;
     color: white;
-    text-align: center;
+    cursor: pointer;
+    transform: scale(1.1);
 }
-
-
-
 
 
 
