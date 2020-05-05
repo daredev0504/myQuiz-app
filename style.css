@@ -81,27 +81,43 @@ nav a:hover{
 /*main styles*/
 main{
     background:#4dc84d;
-    height:100vh;
-    margin: 0 auto;
-    display: flex;
-    align-items:center;
-    justify-content: center;
+    
 }
-div>button{
-    font-size:2em;
-    padding:.4em 1em;
-    color: #4dc84d;
+.main-container{
+    max-width: 80%;
+    margin: 0 auto; 
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+   
+}
+.quiz-header{
+    color: white;
+    margin-bottom: 1.5em;
+    font-size: x-large;
+}
+.play-btn{
+    font-size:1em;
+    padding:1em 3em;
+    color: green;
     border: none;
     transition:transform 200ms;
+    background: white;
+    text-decoration: none;
+    border-radius: 10px;
 }
-div>button:hover{
-    background: none;
-    border: 1px solid white;
-    color: white;
+.play-btn:hover{
+   transform: scale(1.1);
     cursor: pointer;
-    transform: scale(1.1);
+    box-shadow: 1px 2px 3px green;
 }
-
+.play-btn[disabled]:hover{
+    cursor: not-allowed;
+    transform: none;
+}
 
 
 

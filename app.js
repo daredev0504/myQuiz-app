@@ -1,21 +1,3 @@
-let fColor=document.querySelector('.color1');
-let sColor=document.querySelector('.color2');
-let result=document.querySelector('h3');
-
-//let mainB=document.querySelector('#main');
-
-
-fColor.addEventListener('input',function(){
-    console.log(fcolor.value);  
-})
-
-
-
-
-
-
-
-
 
 
 let mobileOpen=()=> {

@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Quiz!</title>
+    <title>play!</title>
     <link rel="stylesheet" href="all.js" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="quizpage.css" />
   </head>
   <body>
     <header>
@@ -31,15 +32,32 @@
       <a href="#">tutorials</a>
       <a href="#">contact us</a>
     </div>
+
     <main>
-      <div class="main-container">
-          <div class="quiz-header">
-              <h1>Quizzy</h1>
-            </div>
-       <a class="play-btn" href="quizpage.html">Play</a> 
+      <div id="game" class="main-container">
+        <div class="quest-options-container">
+          <h1 id="question">
+            whats the answer to the question
+          </h1>
+          <div class="options-container">
+            <p class="options-letter">A</p>
+            <p class="options-answer">option 1</p>
+          </div>
+          <div class="options-container">
+            <p class="options-letter">B</p>
+            <p class="options-answer">option 2</p>
+          </div>
+          <div class="options-container">
+            <p class="options-letter">C</p>
+            <p class="options-answer">option 3</p>
+          </div>
+          <div class="options-container">
+            <p class="options-letter">D</p>
+            <p class="options-answer">option 4</p>
+          </div>
+        </div>
       </div>
     </main>
-    <footer></footer>
     <script src="app.js"></script>
     <script src="all.js"></script>
   </body>
