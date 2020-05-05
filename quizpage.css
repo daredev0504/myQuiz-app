@@ -6,6 +6,7 @@
     margin-bottom: 1em;
     background: white;
     border: 1px solid green;
+    transition: transform 200ms ease-out;
 }
 .options-container:hover{
     transform: scale(1.1);
@@ -19,4 +20,130 @@
 }
 .options-answer{
     padding:1em;
+    width: 100%;
+}
+
+.correct{
+    animation: option-Anim-correct 200ms linear infinite alternate;
+}
+.incorrect{
+    animation: option-Anim 1s linear infinite reverse;
+}
+
+
+
+/*top-display*/
+.display-item{
+  position: fixed;
+  top: 23em;
+  left:8em;
+  background: white;
+  padding: 1.5em;
+  box-shadow: 1px 2px 3px green;
+  border-radius: 10px;
+}
+.display-item>p{
+    margin-bottom: 1em;
+    color: green;
+    text-transform: capitalize;
+
+}
+.display-item h1{
+    color: green;
+    
+}
+.score-item{
+    background: white;
+    position: fixed;
+    top: 23em;
+    right:9em;
+    padding: 1.5em;
+    box-shadow: 1px 2px 3px green;
+    border-radius: 10px;
+}
+
+.score-item>p{
+    color: green;
+    text-transform: capitalize;
+    margin-bottom: 1em;
+}
+.score-item h1{
+    color: green;
+    
+}
+
+
+
+/* next button styles*/
+.next-btn{
+    font-size:1em;
+    padding:1em 3em;
+    color: green;
+    border: none;
+    transition:transform 200ms;
+    background: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.next-btn:hover{
+   transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 1px 2px 3px green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes option-Anim{
+    0%{
+        background: red;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes option-Anim-correct{
+    0%{
+        background: yellowgreen
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        background: yellowgreen;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:800px){
+    .display-item,.score-item{
+        position: inherit;
+        margin: 1em;
+       
+    }
+    .top-display{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
 }

@@ -18,7 +18,7 @@
         </div>
 
         <nav>
-          <a href="#">home</a>
+          <a href="index.html">home</a>
           <a href="#">tutorials</a>
         </nav>
         <div class="mobile-click">
@@ -34,28 +34,38 @@
     </div>
 
     <main>
+      <div class="top-display">
+          <div class="display-item">
+              <p id='display-text'>question</p>
+              <h1 id="display-score"><h1/>
+            </div>
+              <div class="score-item">
+                    <p id='score-board'>score</p>
+                    <h1 id="score">0</h1>
+            </div>
+      </div>
       <div id="game" class="main-container">
-        <div class="quest-options-container">
+        <div class="quest-options-container">  
           <h1 id="question">
-            whats the answer to the question
           </h1>
           <div class="options-container">
             <p class="options-letter">A</p>
-            <p class="options-answer">option 1</p>
+            <p class="options-answer" data-num="1"></p>
           </div>
           <div class="options-container">
             <p class="options-letter">B</p>
-            <p class="options-answer">option 2</p>
+            <p class="options-answer" data-num="2"></p>
           </div>
           <div class="options-container">
             <p class="options-letter">C</p>
-            <p class="options-answer">option 3</p>
+            <p class="options-answer" data-num="3"></p>
           </div>
-          <div class="options-container">
+          <d class="options-container">
             <p class="options-letter">D</p>
-            <p class="options-answer">option 4</p>
-          </div>
+            <p class="options-answer" data-num="4"></p>
+          </d iv>
         </div>
+        <a class="next-btn" id="next-btn" href="#">Next</a>
       </div>
     </main>
     <script src="app.js"></script>
