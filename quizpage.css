@@ -24,10 +24,13 @@
 }
 
 .correct{
+  
+    color:white;
     animation: option-Anim-correct 200ms linear infinite alternate;
 }
 .incorrect{
-    animation: option-Anim 1s linear infinite reverse;
+    animation: option-Anim 1s linear 1 reverse;
+    color:white;
 }
 
 

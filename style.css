@@ -175,6 +175,7 @@ main{
     .mobile-nav{
         position: fixed;
         top: 0;
+        right:0;
         display: block;
         background: black;
         overflow-x: hidden;

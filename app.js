@@ -11,12 +11,15 @@ let mobileClose=()=> {
 //mobile navigation ends
 
 //quiz codes
+
 const question=document.getElementById('question');//gets the question container
 question.style.color='white';//changes the text to white
 const options=Array.from(document.getElementsByClassName('options-answer')); //create an array from the option items
 const displayText=document.getElementById('display-score');
 const scoreText=document.getElementById('score');
-const nextButon=document.getElementById('next-btn')
+const nextButton=document.getElementById('next-btn')
+//console.log(nextButton);
+
 
 
 let currentQuestion={};//create an empty object to hold the 
@@ -76,35 +79,39 @@ const maxQuestions=5;//number of questions
 
 let quizApp=()=>{
     //the main quiz function
-    
     questionCounter=0;
     scoreCounter=0;
-    remainingQuestions=[...questions];//copy the questions from the question array
-    console.log(remainingQuestions);
+    remainingQuestions=[...questions];
+  //copy the questions from the question array
+    //console.log(remainingQuestions);
    getNextQuestion();
 };
 
 let getNextQuestion=()=>{
-    if (remainingQuestions.length===0){
+    if (remainingQuestions.length===1){
         //go to end of the game
-      return window.location.assign('endgame.html');
-   }; 
-    questionCounter++;
-    displayText.innerText=`${questionCounter}/${maxQuestions}`;
+        nextButton.addEventListener('click',function(event){
+           const end=event.target;
+           end.innerText='end game';
+           localStorage.setItem('recentScore',scoreCounter);
+            return window.location.assign('endgame.html');
+        })
+   
+ }; 
+   
+ questionCounter++;
+ displayText.innerText=`${questionCounter}/${maxQuestions}`;
    
     const questionNum=Math.floor(Math.random()*remainingQuestions.length);//picks a question at random
-    currentQuestion=remainingQuestions[questionNum];//assigns the random question to the current question the user is 
+   currentQuestion=remainingQuestions[questionNum];//assigns the random question to the current question the user is 
     question.innerText=currentQuestion.Question.toUpperCase();//access the question property of the currentQuestion object and inserts it into the question element
+//console.log(remainingQuestions[2]);
 
     options.forEach(option=>{
        const num=option.dataset['num'];
        option.innerText=currentQuestion['option'+num];
     });
- //  options.forEach(optionFunct);
-   // optionFunct=(item)=>{
-      // const num=item.dataset['num'];
-       //item.innerText=currentQuestion['item'+num];
-   remainingQuestions.splice(questionNum,1);
+  remainingQuestions.splice(questionNum,1);
     //answerDelay=true;
 };
 
@@ -117,20 +124,28 @@ options.forEach(option=>{
        const answerValidation=(selectedAnswer==currentQuestion.answer)?'correct':'incorrect';
         //console.log(answerValidation);
         selectedOption.parentElement.classList.add(answerValidation);
-        setTimeout(()=>{
+        setTimeout(function(){
             selectedOption.parentElement.classList.remove(answerValidation);
-            if(answerValidation=='correct'){
-                incrementScore(correctPoints); 
-            }
-           getNextQuestion();
-        },1000)
+           },1000);
+      
+        if(selectedAnswer==currentQuestion.answer){
+            incrementScore(correctPoints);
+        }
+       
      
-        
     });
+    
 })
 
     incrementScore=num=>{
         scoreCounter+=num;
         scoreText.innerText=scoreCounter;
     }
+   
 quizApp();
+
+
+function next(){
+       return getNextQuestion();     
+}
+//next();
