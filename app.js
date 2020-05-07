@@ -88,12 +88,19 @@ let quizApp=()=>{
 };
 
 let getNextQuestion=()=>{
-    if (remainingQuestions.length===0){
-        
-            return window.location.assign('endgame.html');
-        }
+  
+        //go to end of the game
+        options.forEach(option=>{
+            option.addEventListener('click',function(event){
+                if (remainingQuestions.length===0){
+               const end=event.target;
+               end.innerText='end game';
+                return window.location.assign('endgame.html');
+            } 
+        })
+    })
+    
    
- 
  questionCounter++;
  displayText.innerText=`${questionCounter}/${maxQuestions}`;
    
