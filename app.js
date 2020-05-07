@@ -21,7 +21,7 @@ const nextButton=document.getElementById('next-btn')
 //console.log(nextButton);
 
 
-
+//let clicks=0;
 let currentQuestion={};//create an empty object to hold the 
 let answerDelay=false;
 let scoreCounter=0;//declare a score counter variable that updates the score as the user goes with the quiz
@@ -88,12 +88,11 @@ let quizApp=()=>{
 };
 
 let getNextQuestion=()=>{
-    if (remainingQuestions.length===1){
+    if (remainingQuestions.length===0){
         //go to end of the game
         nextButton.addEventListener('click',function(event){
            const end=event.target;
            end.innerText='end game';
-           localStorage.setItem('recentScore',scoreCounter);
             return window.location.assign('endgame.html');
         })
    
@@ -114,38 +113,48 @@ let getNextQuestion=()=>{
   remainingQuestions.splice(questionNum,1);
     //answerDelay=true;
 };
+let optionClick= function (e){
+    //for each click,the following are executed
+    const selectedOption=e.target;//returns the options
+    const selectedAnswer=selectedOption.dataset['num'];
+  // console.log(selectedAnswer==currentQuestion.answer);
+
+   const answerValidation=(selectedAnswer==currentQuestion.answer)?'correct':'incorrect';
+  // if(selectedAnswer==currentQuestion.answer){
+      // selectedAnswer.style.pointerEvents='none';
+ //  }
+    //console.log(answerValidation);
+    selectedOption.parentElement.classList.add(answerValidation);
+    setTimeout(function(){
+        selectedOption.parentElement.classList.remove(answerValidation);
+       },1000);
+  
+    if(selectedAnswer==currentQuestion.answer){
+        incrementScore(correctPoints);
+       
+}
+clicks();
+}
 
 options.forEach(option=>{
-    option.addEventListener('click',e=>{//for each click,the following are executed
-        const selectedOption=e.target;//returns the options
-        const selectedAnswer=selectedOption.dataset['num'];
-      // console.log(selectedAnswer==currentQuestion.answer);
-
-       const answerValidation=(selectedAnswer==currentQuestion.answer)?'correct':'incorrect';
-        //console.log(answerValidation);
-        selectedOption.parentElement.classList.add(answerValidation);
-        setTimeout(function(){
-            selectedOption.parentElement.classList.remove(answerValidation);
-           },1000);
-      
-        if(selectedAnswer==currentQuestion.answer){
-            incrementScore(correctPoints);
-        }
-       
-     
-    });
-    
+    option.addEventListener('click',optionClick)  
 })
 
     incrementScore=num=>{
         scoreCounter+=num;
         scoreText.innerText=scoreCounter;
     }
-   
+    function clicks(){
+        for(i=0;i<options.length;i++)
+        if(optionClick<1){
+            selectedAnswer.style.pointerEvents='none';
+        }
+    }  
 quizApp();
 
 
 function next(){
+    localStorage.setItem('recentScore',scoreCounter)
        return getNextQuestion();     
 }
 //next();

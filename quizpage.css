@@ -5,17 +5,17 @@
     display: flex;
     margin-bottom: 1em;
     background: white;
-    border: 1px solid green;
+    border: 1px solid var(--secondary-color);
     transition: transform 200ms ease-out;
 }
 .options-container:hover{
     transform: scale(1.1);
     cursor: pointer;
-    box-shadow: 1px 2px 3px green;
+    box-shadow: 1px 2px 3px var(--secondary-color);
 }
 .options-letter{
     padding:1em 2em;
-    background:green;
+    background:var(--secondary-color);
     color: white;
 }
 .options-answer{
@@ -42,17 +42,17 @@
   left:8em;
   background: white;
   padding: 1.5em;
-  box-shadow: 1px 2px 3px green;
+  box-shadow: 1px 2px 3px var(--secondary-color);
   border-radius: 10px;
 }
 .display-item>p{
     margin-bottom: 1em;
-    color: green;
+    color: var(--secondary-color);
     text-transform: capitalize;
 
 }
 .display-item h1{
-    color: green;
+    color: var(--secondary-color);
     
 }
 .score-item{
@@ -61,17 +61,17 @@
     top: 23em;
     right:9em;
     padding: 1.5em;
-    box-shadow: 1px 2px 3px green;
+    box-shadow: 1px 2px 3px var(--secondary-color);
     border-radius: 10px;
 }
 
 .score-item>p{
-    color: green;
+    color: var(--secondary-color);
     text-transform: capitalize;
     margin-bottom: 1em;
 }
 .score-item h1{
-    color: green;
+    color: var(--secondary-color);
     
 }
 
@@ -81,7 +81,7 @@
 .next-btn{
     font-size:1em;
     padding:1em 3em;
-    color: green;
+    color: var(--secondary-color);
     border: none;
     transition:transform 200ms;
     background: white;
@@ -91,7 +91,7 @@
 .next-btn:hover{
    transform: scale(1.1);
     cursor: pointer;
-    box-shadow: 1px 2px 3px green;
+    box-shadow: 1px 2px 3px var(--secondary-color);
 }
 
 
@@ -116,13 +116,13 @@
 
 @keyframes option-Anim-correct{
     0%{
-        background: yellowgreen
+        background: green;
     }
     50%{
         opacity: 0;
     }
     100%{
-        background: yellowgreen;
+        background: green;
     }
 }
 

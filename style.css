@@ -1,4 +1,5 @@
 *{
+    --secondary-color:#28c593;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -40,11 +41,11 @@ nav a{
     padding: 1em;
 }
 .fa-orcid{
-    color:#4dc84d;
+    color:var(--secondary-color);
     font-size: 1.5em;
 }
 nav a:hover{
-    background: #4dc84d;
+    background: var(--secondary-color);
     color: white;
     border-radius: 5px;
 }
@@ -63,7 +64,7 @@ nav a:hover{
  }
  .mobile-click a{
      text-decoration: none;
-     background: #4dc84d;
+     background: #ffb366;
      padding: .7em;
      color: white;
      border-radius: 5px;
@@ -82,7 +83,7 @@ nav a:hover{
  }
 /*main styles*/
 main{
-    background:#4dc84d;
+    background:#ffb366;
     
 }
 .main-container{
@@ -104,7 +105,7 @@ main{
 .play-btn{
     font-size:1em;
     padding:1em 3em;
-    color: green;
+    color:var(--secondary-color);
     border: none;
     transition:transform 200ms;
     background: white;
@@ -114,7 +115,7 @@ main{
 .play-btn:hover{
    transform: scale(1.1);
     cursor: pointer;
-    box-shadow: 1px 2px 3px green;
+    box-shadow: 1px 2px 3px var(--secondary-color);
 }
 .play-btn[disabled]:hover{
     cursor: not-allowed;
