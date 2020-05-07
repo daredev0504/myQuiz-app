@@ -89,15 +89,11 @@ let quizApp=()=>{
 
 let getNextQuestion=()=>{
     if (remainingQuestions.length===0){
-        //go to end of the game
-        nextButton.addEventListener('click',function(event){
-           const end=event.target;
-           end.innerText='end game';
+        
             return window.location.assign('endgame.html');
-        })
+        }
    
- }; 
-   
+ 
  questionCounter++;
  displayText.innerText=`${questionCounter}/${maxQuestions}`;
    
@@ -120,10 +116,7 @@ let optionClick= function (e){
   // console.log(selectedAnswer==currentQuestion.answer);
 
    const answerValidation=(selectedAnswer==currentQuestion.answer)?'correct':'incorrect';
-  // if(selectedAnswer==currentQuestion.answer){
-      // selectedAnswer.style.pointerEvents='none';
- //  }
-    //console.log(answerValidation);
+
     selectedOption.parentElement.classList.add(answerValidation);
     setTimeout(function(){
         selectedOption.parentElement.classList.remove(answerValidation);
