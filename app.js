@@ -125,7 +125,7 @@ let optionClick= function (e){
   
     if(selectedAnswer==currentQuestion.answer){
         incrementScore(correctPoints);
-       
+        localStorage.setItem('recentScore',scoreCounter)
 }
 clicks();
 }
@@ -148,7 +148,7 @@ quizApp();
 
 
 function next(){
-    localStorage.setItem('recentScore',scoreCounter)
+   
        return getNextQuestion();     
 }
 //next();
