@@ -75,7 +75,6 @@ let questions=[
 const correctPoints=100;//a constant score for each question
 const maxQuestions=5;//number of questions
 
-//nextButon.addEventListener('click',);
 
 let quizApp=()=>{
     //the main quiz function
@@ -93,34 +92,29 @@ let getNextQuestion=()=>{
         options.forEach(option=>{
             option.addEventListener('click',function(event){
                 if (remainingQuestions.length===0){
-               const end=event.target;
-               end.innerText='end game';
                 return window.location.assign('endgame.html');
             } 
         })
     })
     
-   
  questionCounter++;
  displayText.innerText=`${questionCounter}/${maxQuestions}`;
    
     const questionNum=Math.floor(Math.random()*remainingQuestions.length);//picks a question at random
    currentQuestion=remainingQuestions[questionNum];//assigns the random question to the current question the user is 
     question.innerText=currentQuestion.Question.toUpperCase();//access the question property of the currentQuestion object and inserts it into the question element
-//console.log(remainingQuestions[2]);
+
 
     options.forEach(option=>{
        const num=option.dataset['num'];
        option.innerText=currentQuestion['option'+num];
     });
   remainingQuestions.splice(questionNum,1);
-    //answerDelay=true;
 };
 let optionClick= function (e){
     //for each click,the following are executed
     const selectedOption=e.target;//returns the options
     const selectedAnswer=selectedOption.dataset['num'];
-  // console.log(selectedAnswer==currentQuestion.answer);
 
    const answerValidation=(selectedAnswer==currentQuestion.answer)?'correct':'incorrect';
 
